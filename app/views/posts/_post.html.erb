@@ -1,0 +1,10 @@
+<div class="card">
+  <%= link_to image_tag(post.image, class: :card_img ), post_path(post) %>
+  <div class="card_body">
+    <%= link_to post.address, post_path(post), class: :card_title%>
+    <p class="card_summary">
+      <%= post.content %>
+    </p>
+    <%= link_to "by #{post.user.name}", "#", class: :card_user %>
+  </div>
+</div>
