@@ -21,6 +21,7 @@
                       こんにちは、
               <%= link_to "#{current_user.username}さん", "#", class: :greeting_link%>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav_logout %>
+              <%= link_to "情報をシェアする", new_post_path, class: :nav_btn %>
             </div>
           <% else %>
             <div class="nav_right">
@@ -28,7 +29,11 @@
               <%= link_to "新規登録", new_user_registration_path, class: :nav_btn %>
             </div>
           <% end %>
-
+          <div class="nav_right">
+          <% unless current_page?(root_path) %>
+            <%= link_to "トップページに戻る", root_path, class: :nav_btn %>
+          <% end %>
+          </div>
         </div>
       </div>
     </header>
